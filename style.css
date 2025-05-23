@@ -1,0 +1,396 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a192f;
+  color: #ccd6f6;
+  line-height: 1.6;
+}
+
+a {
+  color: #00b4d8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #112240;
+  color: #e0e0e0;
+}
+
+/* Header */
+header {
+  background: #001f3f;
+  color: #00b4d8;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.big-brand img {
+  width: 150px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.big-brand {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: 'Segoe UI Black', sans-serif;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #00b4d8aa;
+  color: #03045e;
+}
+
+/* Dark mode toggle */
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #00b4d8;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hero section */
+.hero {
+  padding: 80px 20px 60px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  color: #00b4d8;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #90e0ef;
+}
+
+/* Sections titles */
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #00b4d8;
+  user-select: none;
+}
+
+/* Bottles sections */
+.bottles {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.bottles.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards */
+.flavor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #112240dd;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 0 10px #0096c7aa;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 180, 216, 0.7);
+}
+
+.card img {
+  max-width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.card h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #00b4d8;
+  margin-bottom: 5px;
+}
+
+.card .desc {
+  font-size: 1rem;
+  color: #90e0ef;
+  margin-bottom: 8px;
+}
+
+.card .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00b4d8;
+}
+
+/* Glass bottle cards - slight different shadow */
+.card.glass {
+  box-shadow: 0 0 15px #90e0efaa;
+}
+
+.card.glass:hover {
+  box-shadow: 0 15px 30px rgba(144, 224, 239, 0.8);
+}
+
+/* Ads Section */
+#ads {
+  text-align: center;
+  margin: 50px 0;
+}
+
+#ads img.ads {
+  max-width: 95%;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #00b4d8aa;
+  user-select: none;
+  width: 800px;
+}
+
+/* Contact Section */
+#contact {
+  max-width: 600px;
+  margin: 60px auto 40px;
+  background: #112240cc;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.7);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-person h3 {
+  color: #00b4d8;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.contact-person p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #90e0ef;
+}
+
+.contact-person a {
+  color: #00b4d8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 130px;
+  right: 50px;
+  width: 10px;
+  height: 10px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.whatsapp-float img {
+  width: 70px;    /* smaller icon */
+  height: 80px;
+  user-select: none;
+  pointer-events: none;
+}
+.contact-person a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #00b4d8;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: #0a192f;
+  color: #ccd6f6;
+  resize: vertical;
+  box-shadow: inset 0 0 6px #0077b6aa;
+  transition: box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px #00b4d8;
+}
+
+form button {
+  background-color: #00b4d8;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0096c7;
+}
+
+/* Form message */
+#formMessage {
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  color: #00b4d8;
+}
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #00b4d8;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  display: none; /* hidden initially */
+  z-index: 9999;
+}
+
+#backToTop:hover {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+
+  .big-brand {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flavor-cards {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
