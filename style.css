@@ -23,7 +23,7 @@ a:hover {
 
 /* Header */
 header {
-  background: #F5F1E9; /* Creamy light beige */
+  background: #F5F1E9;
   color: #22282f;
   padding: 10px 30px;
   display: flex;
@@ -33,9 +33,10 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  flex-wrap: wrap;
 }
 
-/* Remove block from .name */
+/* Logo Name */
 .name {
   font-size: 4.5rem;
   font-weight: 800;
@@ -56,20 +57,24 @@ header {
   text-shadow: 0 0 10px rgba(18, 52, 88, 0.5);
 }
 
-/* Brand image and big-brand text */
-.big-brand img {
-  width: 150px;
-  height: 100px;
-  margin-right: 10px;
-}
-
+/* Brand image + text */
 .big-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 3.5rem;
   font-weight: 900;
   font-family: 'Segoe UI Black', sans-serif;
   letter-spacing: 2px;
   user-select: none;
   color: #123458;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.big-brand img {
+  width: 150px;
+  height: 100px;
 }
 
 /* Navigation Bar */
@@ -79,6 +84,7 @@ nav ul {
   gap: 20px;
   align-items: center;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -87,17 +93,13 @@ nav ul li a {
   padding: 6px 14px;
   border-radius: 10px;
   color: #22282f;
-  background-color: transparent;
-  box-shadow: none;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
-  display: inline-block;
-  text-decoration: none;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-  background-color: #D4C9BE; /* Soft warm beige */
+  background-color: #D4C9BE;
   color: #123458;
   outline: none;
 }
@@ -148,7 +150,7 @@ h2 {
   user-select: none;
 }
 
-/* Bottles Sections */
+/* Bottles Section */
 .bottles {
   max-width: 1100px;
   margin: 0 auto 80px;
@@ -177,7 +179,6 @@ h2 {
   box-shadow: 0 0 10px #D4C9BE;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
 }
 
 .card:hover {
@@ -223,11 +224,11 @@ h2 {
   max-width: 95%;
   border-radius: 15px;
   box-shadow: 0 0 25px #D4C9BE;
-  user-select: none;
   width: 800px;
+  user-select: none;
 }
 
-/* Contact Section (without form) */
+/* Contact Section */
 #contact {
   max-width: 600px;
   margin: 60px auto 40px;
@@ -260,7 +261,6 @@ h2 {
 
 .contact-person a {
   color: #123458;
-  text-decoration: none;
   font-weight: 600;
 }
 
@@ -268,7 +268,7 @@ h2 {
   text-decoration: underline;
 }
 
-/* WhatsApp Button */
+/* WhatsApp Floating Button */
 .whatsapp-float {
   position: fixed;
   bottom: 130px;
@@ -277,13 +277,11 @@ h2 {
   height: 10px;
   background-color: #25d366;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .whatsapp-float img {
@@ -293,7 +291,7 @@ h2 {
   pointer-events: none;
 }
 
-/* Back to top button */
+/* Back to Top Button */
 #backToTop {
   position: fixed;
   bottom: 40px;
@@ -306,56 +304,15 @@ h2 {
   border-radius: 50%;
   cursor: pointer;
   font-size: 28px;
-  line-height: 48px;
   text-align: center;
+  line-height: 48px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.4);
   opacity: 0.8;
-  transition: opacity 0.3s ease;
   z-index: 10000;
 }
 
 #backToTop:hover {
   opacity: 1;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
-  }
-
-  .name {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-  }
-
-  nav ul {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 5px 10px;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  .card img {
-    height: 140px;
-  }
 }
 
 /* Footer */
@@ -385,10 +342,61 @@ footer p {
 
 .fssai-info-footer img {
   height: 30px;
-  width: auto;
   object-fit: contain;
 }
 
 .fssai-info-footer span {
   white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .big-brand {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    gap: 10px;
+  }
+
+  nav ul {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  #ads img.ads {
+    width: 95%;
+  }
 }
