@@ -26,38 +26,22 @@ header {
   background: #F5F1E9;
   color: #22282f;
   padding: 10px 30px;
+  
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Header Layout */
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   flex-wrap: wrap;
+  width: 100%;
 }
 
-/* Logo Name */
-.name {
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #123458;
-  font-family: 'Segoe UI Black', sans-serif;
-  user-select: none;
-  text-shadow: 1px 1px 4px rgba(18, 52, 88, 0.3);
-  padding: 0;
-  background: none;
-  border-radius: 0;
-  display: inline-block;
-  letter-spacing: 1.5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.name:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(18, 52, 88, 0.5);
-}
-
-/* Brand image + text */
+/* Left Logo */
 .big-brand {
   display: flex;
   align-items: center;
@@ -75,6 +59,31 @@ header {
 .big-brand img {
   width: 150px;
   height: 100px;
+  object-fit: contain;
+}
+
+/* Center Brand Name & Nav */
+.center-nav {
+  flex: 1;
+  text-align: center;
+}
+
+/* Logo Name */
+.name {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #123458;
+  font-family: 'Segoe UI Black', sans-serif;
+  user-select: none;
+  text-shadow: 1px 1px 4px rgba(18, 52, 88, 0.3);
+  margin: 0;
+  letter-spacing: 1.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.name:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(18, 52, 88, 0.5);
 }
 
 /* Navigation Bar */
@@ -83,7 +92,9 @@ nav ul {
   display: flex;
   gap: 20px;
   align-items: center;
-  margin: 0;
+  justify-content: center;
+  padding: 0;
+  margin: 10px 0 0 0;
   flex-wrap: wrap;
 }
 
@@ -93,6 +104,7 @@ nav ul li a {
   padding: 6px 14px;
   border-radius: 10px;
   color: #22282f;
+  text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
 }
@@ -104,11 +116,80 @@ nav ul li a:focus {
   outline: none;
 }
 
-/* Active nav link */
 nav ul li a.active {
   background: linear-gradient(135deg, #D4C9BE, #9ACBD0);
   color: #123458;
   box-shadow: 0 0 10px #9ACBD0;
+}
+
+/* Right Logo */
+.right-logo img {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Responsive Header */
+@media (max-width: 992px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .center-nav {
+    order: 2;
+  }
+
+  .big-brand, .right-logo {
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  .right-logo img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .big-brand {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    gap: 10px;
+  }
+
+  nav ul {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
 }
 
 /* Hero Section */
@@ -141,6 +222,16 @@ nav ul li a.active {
   color: #030303;
 }
 
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
 /* Section Titles */
 h2 {
   text-align: center;
@@ -148,6 +239,12 @@ h2 {
   margin-bottom: 40px;
   color: #123458;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.2rem;
+  }
 }
 
 /* Bottles Section */
@@ -214,18 +311,75 @@ h2 {
   color: #123458;
 }
 
-/* Ads Section */
-#ads {
-  text-align: center;
-  margin: 50px 0;
+@media (max-width: 768px) {
+  .card img {
+    height: 140px;
+  }
 }
 
-#ads img.ads {
-  max-width: 95%;
-  border-radius: 15px;
-  box-shadow: 0 0 25px #D4C9BE;
-  width: 800px;
+/* Ads Section */
+#ads {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#ads h2 {
+  text-align: center;
+  color: #123458;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.main-ad img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #f1efec00;
   user-select: none;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.ad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.ad-grid img {
+  width: 100%;
+  height: 600px;
+  object-fit: contain;
+  border-radius: 12px;
+  
+  background-color: #f1efec00;
+  user-select: none;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-grid img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(18, 52, 88, 0.25);
+}
+
+@media (max-width: 600px) {
+  .ad-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-ad img {
+    height: 250px;
+  }
+
+  .ad-grid img {
+    height: 200px;
+  }
 }
 
 /* Contact Section */
@@ -317,18 +471,23 @@ h2 {
 
 /* Footer */
 footer {
-  background-color: #f9f9f9;
-  padding: 15px 20px;
+  background-color: #d4d1cb;
+  color: #000000;
+  padding: 20px;
   text-align: center;
-  font-size: 0.9rem;
-  color: #123458;
+  margin-top: 50px;
+}
+
+footer h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
   font-weight: 600;
-  user-select: none;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
 }
 
 footer p {
-  margin-bottom: 8px;
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .fssai-info-footer {
@@ -338,65 +497,48 @@ footer p {
   gap: 12px;
   flex-wrap: wrap;
   font-weight: 500;
+  margin-top: 10px;
 }
 
 .fssai-info-footer img {
-  height: 30px;
+  height: 25px;
+  max-width: 100%;
   object-fit: contain;
 }
 
 .fssai-info-footer span {
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  font-size: 14px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  header {
+  footer {
+    padding: 20px 10px;
+  }
+
+  .fssai-info-footer {
     flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
+    text-align: center;
   }
 
-  .name {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
+  footer h3 {
+    font-size: 20px;
   }
 
-  .big-brand {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5rem;
-    gap: 10px;
+  footer p,
+  .fssai-info-footer span {
+    font-size: 13px;
   }
-
+}
+@media (max-width: 768px) {
   nav ul {
-    gap: 12px;
-    justify-content: center;
+    gap: 8px;          /* reduce gap between nav items */
   }
 
   nav ul li a {
-    font-size: 0.9rem;
-    padding: 5px 10px;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-  }
-
-  .card img {
-    height: 140px;
-  }
-
-  #ads img.ads {
-    width: 95%;
+    font-size: 0.8rem; /* smaller font size */
+    padding: 4px 8px;  /* smaller padding */
   }
 }
