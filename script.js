@@ -1,15 +1,4 @@
-// Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
-
-darkModeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  if (body.classList.contains('dark-mode')) {
-    darkModeToggle.textContent = '☀️';
-  } else {
-    darkModeToggle.textContent = '🌙';
-  }
-});
 
 // Smooth scrolling for nav links
 document.querySelectorAll('nav ul li a').forEach(link => {
@@ -53,42 +42,3 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
-
-// Contact form validation & submission (basic demo)
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const name = contactForm.name.value.trim();
-  const email = contactForm.email.value.trim();
-  const message = contactForm.message.value.trim();
-
-  if (!name || !email || !message) {
-    formMessage.style.color = 'red';
-    formMessage.textContent = 'Please fill in all fields.';
-    return;
-  }
-
-  // Basic email pattern check
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email)) {
-    formMessage.style.color = 'red';
-    formMessage.textContent = 'Please enter a valid email address.';
-    return;
-  }
-
-  // In real scenario, here would be an AJAX request or form submit
-
-  formMessage.style.color = '#00b4d8';
-  formMessage.textContent = `Thank you, ${name}! Your message has been sent.`;
-
-  // Clear form fields
-  contactForm.reset();
-
-  // Remove message after 5 seconds
-  setTimeout(() => {
-    formMessage.textContent = '';
-  }, 5000);
-});
