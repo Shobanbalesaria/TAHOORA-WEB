@@ -24,6 +24,7 @@ a:hover {
 /* Header */
 header {
   background: #F5F1E9;
+  background: #F5F1E9;
   color: #22282f;
   padding: 10px 30px;
   
@@ -111,6 +112,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
+  background-color: #D4C9BE;
   background-color: #D4C9BE;
   color: #123458;
   outline: none;
@@ -383,6 +385,7 @@ h2 {
 }
 
 /* Contact Section */
+/* Contact Section */
 #contact {
   max-width: 600px;
   margin: 60px auto 40px;
@@ -423,6 +426,7 @@ h2 {
 }
 
 /* WhatsApp Floating Button */
+/* WhatsApp Floating Button */
 .whatsapp-float {
   position: fixed;
   bottom: 130px;
@@ -446,6 +450,7 @@ h2 {
 }
 
 /* Back to Top Button */
+/* Back to Top Button */
 #backToTop {
   position: fixed;
   bottom: 40px;
@@ -459,6 +464,7 @@ h2 {
   cursor: pointer;
   font-size: 28px;
   text-align: center;
+  line-height: 48px;
   line-height: 48px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.4);
   opacity: 0.8;
