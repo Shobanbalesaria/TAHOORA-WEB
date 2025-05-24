@@ -58,8 +58,8 @@ header {
 }
 
 .big-brand img {
-  width: 150px;
-  height: 100px;
+  width: 160px;
+  height: 150px;
   object-fit: contain;
 }
 
@@ -127,7 +127,7 @@ nav ul li a.active {
 /* Right Logo */
 .right-logo img {
   width: 100px;
-  height: 80px;
+  height: 140px;
   object-fit: contain;
 }
 
@@ -443,8 +443,8 @@ h2 {
 }
 
 .whatsapp-float img {
-  width: 70px;
-  height: 80px;
+  width: 50px;
+  height: 60px;
   user-select: none;
   pointer-events: none;
 }
