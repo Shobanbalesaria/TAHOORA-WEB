@@ -7,9 +7,9 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1efec;
+  background-color: #f1f1ec;
   color: #030303;
-  line-height: 3;
+  line-height: 3;   
   border-radius: 10px;
 }
 
@@ -25,25 +25,26 @@ a:hover {
 /* Header */
 header {
   background: #f5f1e9;
-  background: #f5f1e9;
   color: #22282f;
   padding: 10px 30px;
-
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Header Layout */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  flex-direction: column;
+  padding: 20px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
 }
 
-/* Left Logo */
 .big-brand {
   display: flex;
   align-items: center;
@@ -59,18 +60,16 @@ header {
 }
 
 .big-brand img {
-    width: 231px;
-    height: 156px;
-    object-fit: contain;
+  width: 231px;
+  height: 156px;
+  object-fit: contain;
 }
 
-/* Center Brand Name & Nav */
 .center-nav {
   flex: 1;
   text-align: center;
 }
 
-/* Logo Name */
 .name {
   font-size: 2.5rem;
   font-weight: 800;
@@ -88,11 +87,10 @@ header {
   text-shadow: 0 0 10px rgba(18, 52, 88, 0.5);
 }
 
-/* Navigation Bar */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 8px;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -102,8 +100,8 @@ nav ul {
 
 nav ul li a {
   font-weight: 600;
-  font-size: 1rem;
-  padding: 6px 14px;
+  font-size: 0.8rem;
+  padding: 4px 8px;
   border-radius: 10px;
   color: #22282f;
   text-decoration: none;
@@ -113,7 +111,6 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
-  background-color: #d4c9be;
   background-color: #d4c9be;
   color: #123458;
   outline: none;
@@ -125,24 +122,12 @@ nav ul li a.active {
   box-shadow: 0 0 10px #9acbd0;
 }
 
-/* Right Logo */
 .right-logo img {
   width: 100px;
   height: 140px;
   object-fit: contain;
 }
 
-/* Header Container */
-.header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 10px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Logos Row */
 .logo-row {
   display: flex;
   justify-content: center;
@@ -156,7 +141,6 @@ nav ul li a.active {
   width: auto;
 }
 
-/* Navigation */
 .main-nav ul {
   display: flex;
   list-style: none;
@@ -175,28 +159,6 @@ nav ul li a.active {
 
 .main-nav ul li a:hover {
   color: #0077cc;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .logo-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .header-logo {
-    height: 60px;
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .main-nav ul li a {
-    font-size: 1rem;
-  }
 }
 
 .hero-card {
@@ -223,18 +185,6 @@ nav ul li a.active {
   color: #000;
 }
 
-@media (max-width: 768px) {
-  .hero-card {
-    padding: 25px 20px;
-  }
-
-  .hero-card .intro-text {
-    font-size: 1rem;
-  }
-}
-
-
-/* Bottles Section */
 .bottles {
   max-width: 1100px;
   margin: 0 auto 80px;
@@ -249,7 +199,6 @@ nav ul li a.active {
   transform: translateY(0);
 }
 
-/* Cards */
 .flavor-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -287,7 +236,7 @@ nav ul li a.active {
 }
 
 .card .desc {
-  font-size: 1rem;
+  font-size: 20px;
   color: #030303;
   margin-bottom: 8px;
 }
@@ -297,33 +246,30 @@ nav ul li a.active {
   font-weight: 700;
   color: #123458;
 }
+
 #redcard img {
   height: 180px;
   margin: -17px;
 }
+
 #redcard h3 {
- margin: 14px;
+  margin: 14px;
 }
 
 #lemoncut img {
-    height: 234px;
-    margin: -35px;
+  height: 234px;
+  margin: -35px;
 }
+
 #bigballcard img {
-    height: 177px;
-    margin: -9px;
+  height: 177px;
+  margin: -9px;
 }
+
 #bigballcard h3 {
-    margin: 6px 16px;
+  margin: 6px 16px;
 }
 
-@media (max-width: 768px) {
-  .card img {
-    height: 140px;
-  }
-}
-
-/* Ads Section */
 #ads {
   max-width: 900px;
   margin: 40px auto;
@@ -361,7 +307,6 @@ nav ul li a.active {
   height: 600px;
   object-fit: contain;
   border-radius: 12px;
-
   background-color: #f1efec00;
   user-select: none;
   display: block;
@@ -374,22 +319,6 @@ nav ul li a.active {
   box-shadow: 0 12px 20px rgba(18, 52, 88, 0.25);
 }
 
-@media (max-width: 600px) {
-  .ad-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .main-ad img {
-    height: 250px;
-  }
-
-  .ad-grid img {
-    height: 560px;
-  }
-}
-
-/* Contact Section */
-/* Contact Section */
 #contact {
   max-width: 600px;
   margin: 60px auto 40px;
@@ -429,8 +358,6 @@ nav ul li a.active {
   text-decoration: underline;
 }
 
-/* WhatsApp Floating Button */
-/* WhatsApp Floating Button */
 .whatsapp-float {
   position: fixed;
   bottom: 130px;
@@ -453,8 +380,6 @@ nav ul li a.active {
   pointer-events: none;
 }
 
-/* Back to Top Button */
-/* Back to Top Button */
 #backToTop {
   position: fixed;
   bottom: 40px;
@@ -469,7 +394,6 @@ nav ul li a.active {
   font-size: 28px;
   text-align: center;
   line-height: 48px;
-  line-height: 48px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
   opacity: 0.8;
   z-index: 10000;
@@ -479,7 +403,6 @@ nav ul li a.active {
   opacity: 1;
 }
 
-/* Footer */
 footer {
   background-color: #d4d1cb;
   color: #000000;
@@ -524,6 +447,49 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  .header-logo {
+    height: 60px;
+  }
+
+  .logo-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .main-nav ul li a {
+    font-size: 1rem;
+  }
+
+  .hero-card {
+    padding: 25px 20px;
+  }
+
+  .hero-card .intro-text {
+    font-size: 1rem;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .ad-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-ad img {
+    height: 250px;
+  }
+
+  .ad-grid img {
+    height: 560px;
+  }
+
   footer {
     padding: 20px 10px;
   }
@@ -542,13 +508,97 @@ footer p {
     font-size: 13px;
   }
 }
-@media (max-width: 768px) {
-  nav ul {
-    gap: 8px; /* reduce gap between nav items */
+#qa-container {
+  border: 1px solid #a0c4c9; /* soft blue-gray */
+  border-radius: 12px;
+  padding: 22px;
+  max-width: 600px;
+  margin: 25px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fcfc; /* very light cyan */
+  box-shadow: 0 6px 12px rgba(72, 132, 140, 0.15);
+  color: #234e52; /* dark teal text */
+}
+
+#question-list button,
+#next-options button {
+  margin: 6px 10px 6px 0;
+  padding: 12px 18px;
+  border: none;
+  background-color: #3aaea3; /* teal */
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  min-width: 140px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(58, 174, 163, 0.4);
+}
+
+#question-list button:hover,
+#next-options button:hover {
+  background-color: #2a8b85; /* darker teal */
+  box-shadow: 0 5px 10px rgba(42, 139, 133, 0.6);
+}
+
+#answer-section {
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: #def2f1; /* very light teal */
+  border-radius: 10px;
+  min-height: 110px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #1b3a3a; /* dark teal */
+  box-shadow: inset 0 0 8px rgba(58, 174, 163, 0.25);
+}
+
+#back-button {
+  margin-top: 18px;
+  background-color: #617d81; /* medium gray-teal */
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(97, 125, 129, 0.5);
+}
+
+#back-button:hover {
+  background-color: #496466; /* darker gray-teal */
+  box-shadow: 0 5px 10px rgba(73, 100, 102, 0.75);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  #qa-container {
+    max-width: 95%;
+    padding: 18px;
+  }
+  
+  #question-list button,
+  #next-options button {
+    min-width: auto;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 1.05rem;
   }
 
-  nav ul li a {
-    font-size: 0.8rem; /* smaller font size */
-    padding: 4px 8px; /* smaller padding */
+  #answer-section {
+    font-size: 1rem;
+    min-height: 90px;
+    padding: 14px 16px;
+  }
+
+  #back-button {
+    width: 100%;
+    padding: 14px;
   }
 }
+
