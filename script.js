@@ -189,3 +189,10 @@ backButton.addEventListener("click", () => {
 window.addEventListener("load", () => {
   loadMainQuestions();
 });
+
+  const toggle = document.getElementById('menuToggle');
+  const dropdown = document.getElementById('dropdownNav');
+
+  toggle.addEventListener('click', () => {
+    dropdown.classList.toggle('show');
+  });
